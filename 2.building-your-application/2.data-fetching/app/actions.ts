@@ -1,4 +1,5 @@
 'use server'
+import { revalidateTag } from 'next/cache';
 import { cookies } from 'next/headers'
 
 export async function signup(formData: FormData) {
@@ -19,7 +20,7 @@ export async function send(message: string){
 
 export async function updateUser(userId: string, formData: FormData) {
     console.log("id: ", userId);
-    // revalidatePath('/user/${userId}')
+    // revalidatePath('/user/${userId}') // on-demand revalidation with revalidatePath
     // redirect(`/users`) 
 }
 
@@ -49,4 +50,12 @@ export async function exCookies(){
     //set cookie
     cookieStore.set('name', 'Delba')
 
+}
+
+
+// revalidate path
+
+export async function createPost() {
+    // Xóa cache chỉ của dữ liệu có tag 'posts'
+    // revalidateTag('posts')
 }
