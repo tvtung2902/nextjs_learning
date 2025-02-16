@@ -14,6 +14,7 @@ export default function Posts(){
                 }
           
                 const data = await response.json();
+                setPosts(data)
                 console.log(data); // Check the data in the console
               } catch (error) {
                 console.error("Fetch error:", error);
