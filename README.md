@@ -4,8 +4,7 @@ This project was created for learning and practicing with **Next.js** – a powe
 
 ## Getting Started
 
-Install dependencies:
-
 ```bash
 npm install
 npm run dev
+http://localhost:3000
